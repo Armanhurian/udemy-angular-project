@@ -1,0 +1,20 @@
+.whiteColor{
+    color: white;
+}
+a{
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    
+}
+.navbar-item{
+    list-style: none;
+    padding: 1.5rem 2rem;
+}
+.active{
+    background-color: #86b7fe;
+}
+.navbar-list{
+    padding:0 2rem;
+    background-color: rgb(32, 76, 206);
+}

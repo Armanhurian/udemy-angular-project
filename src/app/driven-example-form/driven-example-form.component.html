@@ -1,0 +1,37 @@
+<div class="d-flex justify-content-center">
+  <form action="" #forms="ngForm" (ngSubmit)="onSubmitForm()">
+    <div style="display: block;position: relative; margin-bottom: 1rem;">
+        <label style="position: absolute; left: 5px;"for="email"></label>
+        <input [ngClass]="{activeForm : emailText === ''}" 
+               (keyup)="onKeyEmailUp()" 
+               type="text" 
+               id="email" 
+               placeholder="email" 
+               [(ngModel)]="emailText" 
+               name="email">
+        <p *ngIf="!emailText" style="color: red;">please set your email</p>
+    </div>
+    <div style="display: block;position: relative; margin-bottom: 1rem;">
+        <select (change)="changedOption($event)" ngModel name="Advanced" id="">
+            <option value="Advanced">Advanced</option>
+            <option value="Basic">Basic</option>
+            <option value="Pro">Pro</option>
+        </select>
+        <p *ngIf="!optionalText" style="color: red;">please selected option</p>
+    </div>
+    <div style="display: block;position: relative;margin-bottom: 1rem;">
+        <label style="position: absolute; left: 5px;"for="username"></label>
+        <input 
+            [ngClass]="{activeForm : usernameText === ''}"
+            type="text" 
+            id="username" 
+            placeholder="username"
+            [(ngModel)]="usernameText" 
+            name="username">
+        <p *ngIf="!usernameText" style="color: red;">please set your username</p>    
+    </div>
+    <div style="display: block;position: relative;">
+        <button class="btn btn-primary">Submit</button>
+    </div>
+  </form>
+</div>

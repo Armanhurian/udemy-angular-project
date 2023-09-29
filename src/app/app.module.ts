@@ -15,6 +15,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { TodoNumberComponent } from './todo-number/todo-number.component';
 import { UsersComponent } from './users/users.component';
 import { UserLoginComponent } from './users/user-login/user-login.component';
+import { DrivenExampleFormComponent } from './driven-example-form/driven-example-form.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { UserLoginComponent } from './users/user-login/user-login.component';
     TodosComponent,
     TodoNumberComponent,
     UsersComponent,
-    UserLoginComponent
+    UserLoginComponent,
+    DrivenExampleFormComponent
   ],
   imports: [
     BrowserModule,

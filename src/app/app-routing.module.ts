@@ -6,6 +6,7 @@ import { TodoComponent } from './todo/todo.component';
 import { TodosComponent } from './todos/todos.component';
 import { TodoNumberComponent } from './todo-number/todo-number.component';
 import { UsersComponent } from './users/users.component';
+import { DrivenExampleFormComponent } from './driven-example-form/driven-example-form.component';
 
 const routes : Routes = [
   {path : 'home' , component : HomeComponent},
@@ -13,7 +14,11 @@ const routes : Routes = [
   {path : 'todos' , component : TodosComponent , children : [
     {path : ':id' , component : TodoNumberComponent }
   ]},
-  {path : 'users' , component : UsersComponent},
+  {path : 'users'  , children : [
+    {path : '' , component : UsersComponent},
+    {path : 'driven-forms' , component : DrivenExampleFormComponent}
+  ]},
+  
 ];
 
 @NgModule({

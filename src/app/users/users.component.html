@@ -1,3 +1,9 @@
 <p class=" d-flex justify-content-center">users works!</p>
 <app-user-login (emailUser)="emailHandler($event)"></app-user-login>
+<table>
+    <tr *ngFor="let user of usersList" style="border: 2px solid rgb(103, 101, 101); border-radius: 1rem;">
+        <td style="border-right:2px solid rgb(103, 99, 99) ;">{{ user.email }}</td>
+        <td>{{user.Advanced}}</td>
+    </tr>
+</table>
 

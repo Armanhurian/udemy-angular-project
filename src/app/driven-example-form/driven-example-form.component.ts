@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { UsersService } from '../users.service';
 
 @Component({
   selector: 'app-driven-example-form',
@@ -13,6 +14,10 @@ export class DrivenExampleFormComponent{
   optionalText : string = ''
 
   usernameText:string = ''
+
+  usersLogin : object[] = []
+
+  constructor (private usersService : UsersService) {}
 
   @ViewChild('forms') 'myFormsOptions' : NgForm
 
@@ -36,7 +41,22 @@ export class DrivenExampleFormComponent{
     this.optionalText = this.myFormsOptions.value.Advanced 
     this.usernameText = this.myFormsOptions.value.username 
     
-    console.log(this.myFormsOptions.value);
+    
+    if(this.emailText && this.optionalText && this.usernameText){
+      
+      this.usersLogin.push(this.myFormsOptions.value)
+    }else{
+
+      alert('لطفا فرم را کامل پر کنید')
+      
+    }
+
+    this.emailText = ''
+    this.optionalText = ''
+    this.usernameText = ''
+ 
+    this.usersService.users = this.usersLogin
+    
   }
 
 }

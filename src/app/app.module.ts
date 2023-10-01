@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ServersComponent } from './servers/servers.component';
 import { TodoComponent } from './todo/todo.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EvenComponent } from './even/even.component';
 import { OddComponent } from './odd/odd.component';
 import { GameControlComponent } from './game-control/game-control.component';
@@ -16,6 +16,7 @@ import { TodoNumberComponent } from './todo-number/todo-number.component';
 import { UsersComponent } from './users/users.component';
 import { UserLoginComponent } from './users/user-login/user-login.component';
 import { DrivenExampleFormComponent } from './driven-example-form/driven-example-form.component';
+import { ProjectComponent } from './project/project.component';
 
 @NgModule({
   declarations: [
@@ -30,12 +31,14 @@ import { DrivenExampleFormComponent } from './driven-example-form/driven-example
     TodoNumberComponent,
     UsersComponent,
     UserLoginComponent,
-    DrivenExampleFormComponent
+    DrivenExampleFormComponent,
+    ProjectComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

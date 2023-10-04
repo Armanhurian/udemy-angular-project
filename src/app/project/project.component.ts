@@ -1,6 +1,5 @@
-import { Component } from '@angular/core';
-import { FormControl, FormControlName, FormGroup, Validators, isFormControl } from '@angular/forms';
-import { Observable } from 'rxjs';
+import { Component, OnInit } from '@angular/core';
+import { FormArray, FormControl, FormControlName, FormGroup, Validators, isFormControl } from '@angular/forms';
 import { forbiddenValidators } from './forbidden-validators';
 
 @Component({
@@ -8,7 +7,7 @@ import { forbiddenValidators } from './forbidden-validators';
   templateUrl: './project.component.html',
   styleUrls: ['./project.component.css']
 })
-export class ProjectComponent {
+export class ProjectComponent implements OnInit{
 
   isValidTestText = false;
 
@@ -16,10 +15,25 @@ export class ProjectComponent {
   projectForm = new FormGroup ({
     'projectName' :new FormControl('',[Validators.required,forbiddenValidators.customForbidden]) ,
     'email' : new FormControl('',[Validators.required,Validators.email]),
-    'status' : new FormControl('Critical')
+    'status' : new FormControl('Critical'),
+    'skills' : new FormArray([])
   })
 
+  ngOnInit(): void {
+    console.log(this.projectForm.get('skills')?.value);
+    
+  }
+
+  get mySkills():any{
+    return this.projectForm.get('skills')?.value
+  }
+
+  
   submitForm(){
+
+
+    (<FormArray>this.projectForm.get('skills')).push(this.projectForm.get('email'))
+
     if(this.projectForm.get('projectName')?.errors){
 
       this.isValidTestText = true

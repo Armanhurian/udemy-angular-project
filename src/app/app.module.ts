@@ -17,6 +17,7 @@ import { UsersComponent } from './users/users.component';
 import { UserLoginComponent } from './users/user-login/user-login.component';
 import { DrivenExampleFormComponent } from './driven-example-form/driven-example-form.component';
 import { ProjectComponent } from './project/project.component';
+import { UsersService } from './users.service';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,6 @@ import { ProjectComponent } from './project/project.component';
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

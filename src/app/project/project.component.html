@@ -32,6 +32,10 @@
                 <option value="Finished" id="Finished">Finished</option>  
             </select>
         </div>
+        <div formArrayName="skills" class="mt-2" *ngFor="let skill of mySkills ; let i = index ">
+            <input [formControlName]="i" type="text">
+        </div>
+
         <button class="btn btn-primary d-flex justify-content-center mt-3" type="submit">Submit Project</button>
     </form>
 </div>

@@ -18,6 +18,7 @@ import { UserLoginComponent } from './users/user-login/user-login.component';
 import { DrivenExampleFormComponent } from './driven-example-form/driven-example-form.component';
 import { ProjectComponent } from './project/project.component';
 import { UsersService } from './users.service';
+import { FilterPipe } from './filter.pipe';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { UsersService } from './users.service';
     UsersComponent,
     UserLoginComponent,
     DrivenExampleFormComponent,
-    ProjectComponent
+    ProjectComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,

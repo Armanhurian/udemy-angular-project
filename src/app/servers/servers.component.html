@@ -4,21 +4,24 @@
         <input type="text" [(ngModel)]="filterServer">
         <hr>
         <br>
-        <button class="btn btn-primary" >Add Server</button>
+        <button class="btn btn-primary" (click)="clickToAddServer()">Add Server</button>
         <br><br>
         <h2></h2>
         <hr>
-        <ul class="list-group">
+        <ul class="list-group" >
           <li
+            #myElem
             class="list-group-item"
-            *ngFor="let server of servers" [ngClass]="getStatusClasses(server) | filter: filterServer : 'filterIndex'">
+            *ngFor="let server of servers | filter : filterServer : 'name' "
+            [ngClass]="getStatusClasses(server)">
+
             <span
               class="badge">
               {{ server.status }}
             </span>
             <strong>{{ server.name }}</strong> |
             {{ server.instanceType | uppercase }} |
-            {{ server.started | date:'short' | uppercase }}
+            {{ server.started | date:'short'}}
           </li>
         </ul>
       </div>

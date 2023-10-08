@@ -1,4 +1,5 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
+import { Servers } from './servers.model';
 
 @Component({
   selector: 'app-servers',
@@ -11,11 +12,13 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
   `],
   encapsulation : ViewEncapsulation.None
 })
-export class ServersComponent {
+export class ServersComponent{
+
+  @ViewChild('myElem') 'myElem' : ElementRef 
 
   filterServer : string = ''
 
-  servers = [
+  servers : Servers[] = [
     {
       instanceType: 'medium',
       name: 'Production',
@@ -48,12 +51,23 @@ export class ServersComponent {
     },
   ];
 
+
   getStatusClasses(server: {instanceType: string, name: string, status: string, started: Date}) {
     return {
       'list-group-item-success': server.status === 'stable',
       'list-group-item-warning': server.status === 'offline',
       'list-group-item-danger': server.status === 'critical'
     };
+  }
+
+  clickToAddServer(){
+    
+
+    this.servers.push(new Servers('medium','my DB','critical',new Date(15, 1, 2017)))
+
+    
+
+
   }
 
 }

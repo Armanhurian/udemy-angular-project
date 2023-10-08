@@ -1,18 +1,33 @@
-import { Pipe, PipeTransform } from '@angular/core';
+import { ElementRef, OnInit, Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'filter'
+  name: 'filter',
+  pure : false
 })
-export class FilterPipe implements PipeTransform {
+export class FilterPipe implements PipeTransform{
 
-  transform(value: any , filterServer: string , filterIndex : string){
 
-    let filterArray = value.filter((item:any)=>{
+  transform(value: any , filterServer : string , textOfIndex : string){
 
-      item[filterIndex] === filterServer
+
+    let filterValue = value.filter(( item : any ) => {
+
       
+      if(item[textOfIndex].toLowerCase().includes(filterServer) !== ''){
+        
+        return item[textOfIndex].toLowerCase().includes(filterServer) 
+        
+      }
+
     })
-    return filterArray;
+
+
+    return filterValue
+    
+
+
+
   }
+
 
 }

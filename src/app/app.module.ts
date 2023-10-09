@@ -19,6 +19,7 @@ import { DrivenExampleFormComponent } from './driven-example-form/driven-example
 import { ProjectComponent } from './project/project.component';
 import { UsersService } from './users.service';
 import { FilterPipe } from './filter.pipe';
+import {HttpClientModule} from '@angular/common/http'
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { FilterPipe } from './filter.pipe';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   bootstrap: [AppComponent]
 })

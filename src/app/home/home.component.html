@@ -1,5 +1,17 @@
 <p class="d-flex justify-content-center">home works!</p>
 <div class="d-flex justify-content-center m-auto gap-3">
-    <button class="btn btn-primary " (click)="getAnimals()">get animal</button>
-    <button class="btn btn-danger ">delete animal</button>
+    <button class="btn btn-primary " (click)="getAnimals()">get user</button>
+    <button class="btn btn-danger " (click)="removeUser()">delete user</button>
+</div>
+<div class="mt-5 user-box row col-12">
+    <div *ngIf="!isUpload">
+        <span class="alert alert-danger d-flex justify-content-center">No User !</span>
+    </div>
+    <div *ngIf="isUpload" class="user-container col-3">
+        <img [src]="imageSrc" style="width: 20rem;" alt="" srcset="">
+        <h5>name : {{nameOfUser}}</h5>
+        <h5>email : {{emailOfUser}}</h5>
+        <h5>birthday : {{ birthDay }}</h5>
+    </div>
+
 </div>

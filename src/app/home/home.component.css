@@ -1,0 +1,21 @@
+.user-box{
+    padding: 0 5rem;
+    max-width: 100%;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.user-container{
+    
+    border-radius: 1rem;
+    width: 37%;
+    box-shadow: 0 0 10px #e9ecef;
+}
+.user-container img{
+    width: 100%;
+    border-radius: 1rem;
+}
+h5{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 1rem 0;
+}

@@ -19,7 +19,8 @@ import { DrivenExampleFormComponent } from './driven-example-form/driven-example
 import { ProjectComponent } from './project/project.component';
 import { UsersService } from './users.service';
 import { FilterPipe } from './filter.pipe';
-import {HttpClientModule} from '@angular/common/http'
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http'
+import { InterCeptorService } from './interceptor.service';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,11 @@ import {HttpClientModule} from '@angular/common/http'
     ProjectComponent,
     FilterPipe
   ],
+  providers : [{
+    provide : HTTP_INTERCEPTORS , 
+    useClass : InterCeptorService , 
+    multi : true
+  }],
   imports: [
     BrowserModule,
     AppRoutingModule,

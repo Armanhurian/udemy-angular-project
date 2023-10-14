@@ -31,7 +31,7 @@ export class HomeComponent {
     {
 
       headers : new HttpHeaders({'custom' : 'change'}),
-      params : searchMyParams
+      params : searchMyParams,
       
     }
 

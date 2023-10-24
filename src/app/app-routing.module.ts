@@ -8,6 +8,7 @@ import { TodoNumberComponent } from './todo-number/todo-number.component';
 import { UsersComponent } from './users/users.component';
 import { DrivenExampleFormComponent } from './driven-example-form/driven-example-form.component';
 import { ProjectComponent } from './project/project.component';
+import { CoinsComponent } from './coins/coins.component';
 
 const routes : Routes = [
   {path : 'home' , component : HomeComponent},
@@ -20,6 +21,7 @@ const routes : Routes = [
     {path : 'driven-forms' , component : DrivenExampleFormComponent}
   ]},
   {path : 'project' , component : ProjectComponent},  
+  {path : 'coins' , component : CoinsComponent},  
 ];
 
 @NgModule({

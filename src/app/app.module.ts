@@ -21,6 +21,7 @@ import { UsersService } from './users.service';
 import { FilterPipe } from './filter.pipe';
 import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http'
 import { InterCeptorService } from './interceptor.service';
+import { CoinsComponent } from './coins/coins.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { InterCeptorService } from './interceptor.service';
     UserLoginComponent,
     DrivenExampleFormComponent,
     ProjectComponent,
-    FilterPipe
+    FilterPipe,
+    CoinsComponent
   ],
   providers : [{
     provide : HTTP_INTERCEPTORS , 

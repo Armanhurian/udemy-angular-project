@@ -21,7 +21,7 @@ const routes : Routes = [
     {path : 'driven-forms' , component : DrivenExampleFormComponent}
   ]},
   {path : 'project' , component : ProjectComponent},  
-  {path : 'coins' , component : CoinsComponent},  
+  {path : 'news' , component : CoinsComponent},  
 ];
 
 @NgModule({

@@ -1,40 +1,60 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { coinsService } from '../coins.service';
+import { Observable,  Subscription,  catchError , exhaustMap, fromEvent, interval, pipe , take, throwError } from 'rxjs';
+import { HttpErrorResponse, HttpHeaderResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-coins',
   templateUrl: './coins.component.html',
   styleUrls: ['./coins.component.css']
 })
-export class CoinsComponent implements OnInit{
+export class CoinsComponent implements OnInit , OnDestroy{
 
 
   isETH : boolean = false
 
-  constructor(private coinsServise : coinsService){}
+  subscription ?: Subscription
+
+
+  constructor(private coinsServise : coinsService ){}
   
   getMyCoins(){
-     this.coinsServise.getCoin().subscribe((data)=>{
-
-      if(Object.values(data)[0][0]['id'] === 'eth'){
-
-        this.isETH = true
-        this.coinsServise.coin.next(Object.values(data)[0][0]['id'])
-        
-      }else{
-        this.isETH = false
-      }
-      
-      console.log(this.isETH);
-    })
-  }
-
-  ngOnInit(): void {
-    this.coinsServise.coin.subscribe(data=>{
+    
+    this.coinsServise.getNews().subscribe((data)=>{
 
       console.log(data);
       
-    });
+      console.log(new HttpHeaderResponse(data).status);
+      
+    })
+  }
+
+  clickWindow(){
+
+    this.subscription = fromEvent(document,'click')
+
+    .pipe(exhaustMap(() => interval(1000)
+
+    .pipe(take(10)))
+
+    ).subscribe(x => console.log(x))
+
+  }
+
+  ngOnDestroy(): void {
+    this.subscription?.unsubscribe()
+  }
+  
+  ngOnInit(): void {
+
+    this.clickWindow()
     
+    this.coinsServise.news.subscribe((data : any )=>{
+      
+      console.log(new HttpHeaderResponse(data).status);
+      
+      console.log(data);
+      
+    });
   }
 }

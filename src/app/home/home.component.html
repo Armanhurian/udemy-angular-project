@@ -7,7 +7,7 @@
     <div *ngIf="!isUpload">
         <span class="alert alert-danger d-flex justify-content-center">No User !</span>
     </div>
-    <div *ngIf="isUpload" class="user-container col-3">
+    <div *ngIf="isUpload" style="width: 22rem;" class="user-container">
         <img [src]="imageSrc" style="width: 20rem;" alt="" srcset="">
         <h5>name : {{nameOfUser}}</h5>
         <h5>email : {{emailOfUser}}</h5>

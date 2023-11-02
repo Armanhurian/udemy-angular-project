@@ -1,5 +1,6 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, Input, OnInit, Output, ViewEncapsulation } from '@angular/core';
 import { UsersService } from '../users.service';
+import { Subject } from 'rxjs';
 
 @Component({
   selector: 'app-users',
@@ -12,13 +13,22 @@ export class UsersComponent{
 
   usersList : any[] = this.usersService.users
 
+  isSubmit:boolean = false
+
+  closeAlert(){
+    this.isSubmit = false
+  }
 
   emailHandler(event : string){
     
     console.log(event);
 
     console.log(this.usersList);
- 
+    
+    this.isSubmit = true
+
+    console.log(this.isSubmit);
+    
     
   }
   

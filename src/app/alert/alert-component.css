@@ -1,0 +1,21 @@
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.75);
+    z-index: 50;
+}
+
+.alert-container{
+    width: 30rem;
+    padding: 2rem;
+    box-shadow: 0 0 10px black;
+    border-radius: 1rem;
+    position: absolute;
+    z-index: 55;
+    top: 40vh;
+    left: 31vw;
+    background-color: white;
+}

@@ -6,4 +6,4 @@
         <td>{{user.Advanced}}</td>
     </tr>
 </table>
-
+<app-alert *ngIf="isSubmit" [isSubmit]="isSubmit" (isClose)="closeAlert()"></app-alert>

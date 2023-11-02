@@ -22,6 +22,7 @@ import { FilterPipe } from './filter.pipe';
 import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http'
 import { InterCeptorService } from './interceptor.service';
 import { CoinsComponent } from './coins/coins.component';
+import { alertComponent } from './alert/alert-component';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { CoinsComponent } from './coins/coins.component';
     DrivenExampleFormComponent,
     ProjectComponent,
     FilterPipe,
+    alertComponent,
     CoinsComponent
   ],
   providers : [{

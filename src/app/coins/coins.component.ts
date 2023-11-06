@@ -4,6 +4,7 @@ import { Observable,  Subscription,  catchError , exhaustMap, fromEvent, interva
 import { HttpErrorResponse, HttpHeaderResponse } from '@angular/common/http';
 
 @Component({
+  standalone : true , 
   selector: 'app-coins',
   templateUrl: './coins.component.html',
   styleUrls: ['./coins.component.css']

@@ -14,9 +14,9 @@ const routes : Routes = [
 
 @NgModule({
 
-    declarations : [TodoComponent,TodosComponent,TodoNumberComponent],
+    declarations : [TodosComponent,TodoNumberComponent],
 
-    imports : [RouterModule.forRoot(routes) , CommonModule , FormsModule ],
+    imports : [RouterModule.forRoot(routes) , CommonModule , FormsModule ,TodoComponent],
 
     exports : [TodoComponent,TodosComponent,TodoNumberComponent]
 

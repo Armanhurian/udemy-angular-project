@@ -25,13 +25,13 @@ import { TodosModule } from './todos/todos.module';
     GameControlComponent,
     HomeComponent,
     DrivenExampleFormComponent,
-    ProjectComponent,
-    CoinsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    ProjectComponent,
     ReactiveFormsModule,
+    CoinsComponent,
     FormsModule,
     ServersModule,
     TodosModule,

@@ -1,8 +1,13 @@
 import { Component, OnInit } from "@angular/core";
 import { TodoService } from "../todo.service";
 import { ActivatedRoute, Router } from "@angular/router";
+import { FormsModule } from "@angular/forms";
+import { CommonModule } from "@angular/common";
+
 
 @Component({
+    standalone : true,
+    imports: [FormsModule , CommonModule],
     selector : 'app-todo',
     templateUrl : './todo.component.html',
     styles:[`

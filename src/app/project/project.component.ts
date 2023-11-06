@@ -1,8 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { FormArray, FormControl, FormControlName, FormGroup, Validators, isFormControl } from '@angular/forms';
+import { FormArray, FormControl, FormControlName, FormGroup, ReactiveFormsModule, Validators, isFormControl } from '@angular/forms';
 import { forbiddenValidators } from './forbidden-validators';
+import { CommonModule } from '@angular/common';
 
 @Component({
+  standalone : true , 
+  imports : [ReactiveFormsModule , CommonModule],
   selector: 'app-project',
   templateUrl: './project.component.html',
   styleUrls: ['./project.component.css']

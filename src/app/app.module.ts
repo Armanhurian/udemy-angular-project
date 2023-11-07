@@ -23,10 +23,10 @@ import { TodosModule } from './todos/todos.module';
     EvenComponent,
     OddComponent,
     GameControlComponent,
-    HomeComponent,
     DrivenExampleFormComponent,
   ],
   imports: [
+    HomeComponent,
     BrowserModule,
     AppRoutingModule,
     ProjectComponent,

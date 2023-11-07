@@ -5,9 +5,24 @@ import { ProjectComponent } from './project/project.component';
 import { CoinsComponent } from './coins/coins.component';
 
 const routes : Routes = [
-  {path : 'home' , component : HomeComponent},
-  {path : 'project' , component : ProjectComponent},  
-  {path : 'news' , component : CoinsComponent},  
+  {path : 'home' , 
+
+   //component : HomeComponent
+
+   loadComponent : () => import('./home/home.component').then((mod) => mod.HomeComponent) 
+  },
+  {path : 'project' ,
+
+   //component : HomeComponent
+
+   loadComponent : () => import('./project/project.component').then((mod) => mod.ProjectComponent)
+  },  
+  {path : 'news' ,
+
+   //component : HomeComponent
+
+   loadComponent: () => import('./coins/coins.component').then((mod) => mod.CoinsComponent)
+  },  
 ];
 
 @NgModule({

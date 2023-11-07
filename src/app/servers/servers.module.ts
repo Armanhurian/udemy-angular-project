@@ -16,11 +16,11 @@ const routes : Routes = [
 
 @NgModule({
 
-    declarations: [ServersComponent , FilterPipe],
+    declarations: [ServersComponent, FilterPipe],
 
     imports : [RouterModule.forRoot(routes) , CommonModule , FormsModule ], 
 
-    exports : [ServersComponent , FilterPipe]
+    exports : [ServersComponent ,FilterPipe ]
 
 })
 

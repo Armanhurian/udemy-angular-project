@@ -16,6 +16,8 @@ import { coreModule } from './core.module';
 import { userModule } from './users/user.module';
 import { ServersModule } from './servers/servers.module';
 import { TodosModule } from './todos/todos.module';
+import { StoreModule } from '@ngrx/store';
+import { appReducer } from './store/app.reducer';
 
 @NgModule({
   declarations: [
@@ -37,7 +39,10 @@ import { TodosModule } from './todos/todos.module';
     TodosModule,
     HttpClientModule,
     coreModule,
-    userModule
+    userModule,
+    StoreModule.forRoot({
+      concat : appReducer
+    })
   ],
   bootstrap: [AppComponent]
 })

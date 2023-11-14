@@ -1,4 +1,8 @@
 <p class="d-flex justify-content-center">home works!</p>
+<p class="d-flex justify-content-center">{{ nameOfDeveloper$ | async }}</p>
+<div class="d-flex justify-content-center m-auto mt-2 mb-4">
+    <button class="btn btn-primary" (click)="concatName()">concatName</button>
+</div>
 <div class="d-flex justify-content-center m-auto gap-3">
     <button class="btn btn-primary " (click)="getAnimals()">get user</button>
     <button class="btn btn-danger " (click)="removeUser()">delete user</button>

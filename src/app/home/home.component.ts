@@ -1,6 +1,10 @@
 import { CommonModule } from '@angular/common';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { concatText } from '../store/app.actions';
+import { Observable } from 'rxjs';
+import { selectText } from '../store/app.selector';
 
 @Component({
   standalone : true , 
@@ -9,11 +13,13 @@ import { Component } from '@angular/core';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit{
   
-  constructor( private http : HttpClient ){}
+  constructor( private http : HttpClient , private store : Store<{concat : string}>){}
 
   isUpload : boolean = false
+
+  nameOfDeveloper$ ?: Observable<string>
 
   imageSrc : string = ''
 
@@ -22,6 +28,16 @@ export class HomeComponent {
   emailOfUser : string = ''
 
   birthDay : string = ''
+
+  ngOnInit(): void {
+    
+    this.nameOfDeveloper$ = this.store.select(selectText)
+    
+  }
+
+  concatName () {
+    this.store.dispatch(concatText({value : 'hurian'}))
+  }
   
   getAnimals(){
 

@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, computed, signal } from '@angular/core';
 import { FormArray, FormControl, FormControlName, FormGroup, ReactiveFormsModule, Validators, isFormControl } from '@angular/forms';
 import { forbiddenValidators } from './forbidden-validators';
 import { CommonModule } from '@angular/common';
+import { interval } from 'rxjs';
 
 @Component({
   standalone : true , 
@@ -14,6 +15,11 @@ export class ProjectComponent implements OnInit{
 
   isValidTestText = false;
 
+  x = signal(5)
+
+  y = signal(3)
+
+
 
   projectForm = new FormGroup ({
     'projectName' :new FormControl('',[Validators.required,forbiddenValidators.customForbidden]) ,
@@ -25,6 +31,18 @@ export class ProjectComponent implements OnInit{
   ngOnInit(): void {
     console.log(this.projectForm.get('skills')?.value);
     
+    let z = computed(()=> this.x() + this.y())
+
+    this.y.set(10)
+
+    console.log(z());
+    
+    setInterval(()=>{
+      
+      this.x.update((prevNumber) => prevNumber + 1)
+      
+    },1000)
+
   }
 
   get mySkills():any{

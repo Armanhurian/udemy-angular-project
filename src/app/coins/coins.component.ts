@@ -1,6 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { coinsService } from '../coins.service';
-import { Observable,  Subscription,  catchError , exhaustMap, fromEvent, interval, pipe , take, throwError } from 'rxjs';
+import { Observable,  Subscription,  catchError , exhaustMap, fromEvent, interval, map, pipe , take, throwError } from 'rxjs';
 import { HttpErrorResponse, HttpHeaderResponse } from '@angular/common/http';
 
 @Component({
@@ -21,13 +21,33 @@ export class CoinsComponent implements OnInit , OnDestroy{
   
   getMyCoins(){
     
-    this.coinsServise.getNews().subscribe((data)=>{
+    // this.coinsServise.getNews().subscribe((data)=>{
 
-      console.log(data);
+    //   console.log(data);
       
-      console.log(new HttpHeaderResponse(data).status);
+    //   console.log(new HttpHeaderResponse(data).status);
+      
+    // })
+
+    this.coinsServise.getNews().pipe(map((res)=>{
+
+      let coins = []
+
+      for(const key in res){
+        if(res.hasOwnProperty(key)){
+          coins.push({...res , id : key})
+        }
+      }
+
+      return coins
+
+    })).subscribe((result)=> {
+
+      console.log(result);
       
     })
+
+    
   }
 
   clickWindow(){

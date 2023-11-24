@@ -19,9 +19,8 @@ const routes : Routes = [
   },  
   {path : 'news' ,
 
-   //component : HomeComponent
+   loadComponent : () => import('./coins/coins.component').then((mod) => mod.CoinsComponent)
 
-   loadComponent: () => import('./coins/coins.component').then((mod) => mod.CoinsComponent)
   },  
 ];
 

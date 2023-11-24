@@ -1,7 +1,7 @@
 <input class="m-auto d-flex justify-content-center" placeholder="username" type="text" [(ngModel)]="this.todoService.userName">
 <h2 class="mt-2 d-flex justify-content-center">{{this.todoService.userName}}</h2>
 <button (click)="clickFormsBtn()" class="m-auto d-flex justify-content-center btn btn-danger" [disabled]="!this.todoService.userName"> clicked !</button>
-
-<ul>
-    <li class="mt-2" *ngFor="let todo of todoService.todos; let i = index">{{todo}}  <button class="btn btn-primary" (click)="navigatTo(i + 1)">click {{i + 1}}</button></li>
+<div class="d-flex justify-content-center m-auto mt-4" [@myState]="state" style="height: 100px;width: 100px; border-radius: 1rem;"></div>
+<ul >
+    <li [@divState]="motivation" class="mt-2" *ngFor="let todo of todoService.todos; let i = index">{{todo}}  <button class="btn btn-primary" (click)="navigatTo(i + 1)">click {{i + 1}}</button></li>
 </ul>

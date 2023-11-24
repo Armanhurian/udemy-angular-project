@@ -1,4 +1,4 @@
-import { HttpClient } from "@angular/common/http";
+import { HttpClient, HttpHeaderResponse, HttpHeaders, HttpParams } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { BehaviorSubject } from "rxjs";
 
@@ -12,7 +12,11 @@ export class coinsService {
 
   getNews(){
 
-   return this.http.get('https://jsonplaceholder.typicode.com/posts/1')
+   return this.http.get('https://jsonplaceholder.typicode.com/posts/1', {
+    headers : new HttpHeaders({'Auth' : 'coin'}),
+    params : new HttpParams().set('param' , 'abc')
+    
+   })
     
   }
 

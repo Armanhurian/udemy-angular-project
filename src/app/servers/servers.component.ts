@@ -1,5 +1,8 @@
 import { Component, ElementRef, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
 import { Servers } from './servers.model';
+import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+import { ServersModule } from './servers.module';
 
 @Component({
   selector: 'app-servers',

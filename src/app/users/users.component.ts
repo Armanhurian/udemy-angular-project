@@ -1,6 +1,5 @@
 import { Component, Input, OnInit, Output, ViewEncapsulation } from '@angular/core';
 import { UsersService } from '../users.service';
-import { Subject } from 'rxjs';
 
 @Component({
   selector: 'app-users',

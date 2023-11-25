@@ -19,6 +19,7 @@ import { TodosModule } from './todos/todos.module';
 import { StoreModule } from '@ngrx/store';
 import { appReducer } from './store/app.reducer';
 import { ServersComponent } from './servers/servers.component';
+import { HomeworkComponent } from './home/homework/homework.component';
 
 @NgModule({
   declarations: [
@@ -27,9 +28,10 @@ import { ServersComponent } from './servers/servers.component';
     OddComponent,
     GameControlComponent,
     DrivenExampleFormComponent,
+    HomeComponent,
+    HomeworkComponent
   ],
   imports: [
-    HomeComponent,
     BrowserModule,
     AppRoutingModule,
     ProjectComponent,

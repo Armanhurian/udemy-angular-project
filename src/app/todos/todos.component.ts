@@ -8,6 +8,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./todos.component.css']
   
 })
+
+
 export class TodosComponent {
+
+  motivationTodos = 'left'
 
 }

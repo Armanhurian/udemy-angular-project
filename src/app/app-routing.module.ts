@@ -7,9 +7,9 @@ import { CoinsComponent } from './coins/coins.component';
 const routes : Routes = [
   {path : 'home' , 
 
-   //component : HomeComponent
+   component : HomeComponent
 
-   loadComponent : () => import('./home/home.component').then((mod) => mod.HomeComponent) 
+  //  loadComponent : () => import('./home/home.component').then((mod) => mod.HomeComponent) 
   },
   {path : 'project' ,
 

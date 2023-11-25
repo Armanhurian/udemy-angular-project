@@ -18,6 +18,6 @@
         <a class="navbar-link" routerLink="/news">news</a>
     </li>
 </ul>
-<p class="d-flex justify-content-center">hello {{title | uppercase}}</p>
+<p class="d-flex justify-content-center" [ngStyle]="{'color' : 'red', 'font-weight' : 'bold'}">hello {{title | uppercase}}</p>
 
 <router-outlet></router-outlet>

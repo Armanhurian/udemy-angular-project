@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, Input, OnInit } from "@angular/core";
 import { TodoService } from "../todo.service";
 import { ActivatedRoute, Router } from "@angular/router";
 import { FormsModule } from "@angular/forms";
@@ -50,9 +50,12 @@ export class TodoComponent{
 
   state  = 'normal'
 
-  motivation = 'left'
+  @Input() motivation = ''
 
   clickFormsBtn(){ 
+
+    console.log(this.motivation);
+    
 
     this.todoService.addClickFormsBtn() 
 

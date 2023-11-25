@@ -18,3 +18,6 @@ a{
     padding:0 2rem;
     background-color: rgb(32, 76, 206);
 }
+.backgroundActive{
+    background-color: #86b7fe;
+}

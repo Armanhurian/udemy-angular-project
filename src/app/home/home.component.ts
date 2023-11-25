@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
@@ -7,8 +7,7 @@ import { Observable } from 'rxjs';
 import { selectText } from '../store/app.selector';
 
 @Component({
-  standalone : true , 
-  imports : [CommonModule],
+  
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
@@ -29,6 +28,10 @@ export class HomeComponent implements OnInit{
 
   birthDay : string = ''
 
+  myNumber ?: number 
+
+  isShowNumber : boolean = false 
+
   ngOnInit(): void {
     
     this.nameOfDeveloper$ = this.store.select(selectText)
@@ -37,6 +40,16 @@ export class HomeComponent implements OnInit{
 
   concatName () {
     this.store.dispatch(concatText({value : 'hurian'}))
+  }
+
+  updateCount(event : number){
+
+    console.log(event);
+
+    this.myNumber = event
+
+    this.isShowNumber =! this.isShowNumber
+    
   }
   
   getAnimals(){

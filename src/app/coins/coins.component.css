@@ -1,0 +1,15 @@
+ul{
+    list-style: none;
+    background-color: rgb(119, 225, 190);
+    border-radius: 1rem;
+    width: 9rem;
+    margin: 1rem auto;
+    display: none;
+    transition: all 400ms ease-in;
+}
+.close{
+    display: none;   
+}
+.open{
+    display: block;
+}

@@ -1,20 +1,22 @@
 
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { concatText } from '../store/app.actions';
 import { Observable } from 'rxjs';
 import { selectText } from '../store/app.selector';
 
-@Component({
+@Component({ 
   
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent implements OnInit{
+export class HomeComponent implements OnInit , AfterViewInit {
   
   constructor( private http : HttpClient , private store : Store<{concat : string}>){}
+
+  @ViewChild('localElem') 'localElem' : ElementRef
 
   isUpload : boolean = false
 
@@ -35,6 +37,15 @@ export class HomeComponent implements OnInit{
   ngOnInit(): void {
     
     this.nameOfDeveloper$ = this.store.select(selectText)
+
+    //console.log(this.localElem.nativeElement.innerHTML);
+    
+    
+  }
+  
+  ngAfterViewInit(): void {
+    
+    console.log(this.localElem.nativeElement.innerHTML);
     
   }
 

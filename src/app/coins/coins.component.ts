@@ -2,9 +2,11 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { coinsService } from '../coins.service';
 import { Observable,  Subscription,  catchError , exhaustMap, fromEvent, interval, map, pipe , take, throwError } from 'rxjs';
 import { HttpErrorResponse, HttpHeaderResponse } from '@angular/common/http';
+import { DropdownDirective } from '../dropdown.directive';
 
 @Component({
   standalone : true , 
+  imports : [DropdownDirective],
   selector: 'app-coins',
   templateUrl: './coins.component.html',
   styleUrls: ['./coins.component.css']
@@ -19,7 +21,7 @@ export class CoinsComponent implements OnInit , OnDestroy{
 
   constructor(private coinsServise : coinsService ){}
   
-  getMyCoins(){
+  getMyCoins(event : Event){
     
     // this.coinsServise.getNews().subscribe((data)=>{
 
@@ -28,6 +30,7 @@ export class CoinsComponent implements OnInit , OnDestroy{
     //   console.log(new HttpHeaderResponse(data).status);
       
     // })
+
 
     this.coinsServise.getNews().pipe(map((res)=>{
 

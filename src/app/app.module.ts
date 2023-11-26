@@ -18,8 +18,9 @@ import { ServersModule } from './servers/servers.module';
 import { TodosModule } from './todos/todos.module';
 import { StoreModule } from '@ngrx/store';
 import { appReducer } from './store/app.reducer';
-import { ServersComponent } from './servers/servers.component';
 import { HomeworkComponent } from './home/homework/homework.component';
+import { DropdownDirective } from './dropdown.directive';
+import { DropStyleDirective } from './dropStyle.directive';
 
 @NgModule({
   declarations: [
@@ -29,14 +30,15 @@ import { HomeworkComponent } from './home/homework/homework.component';
     GameControlComponent,
     DrivenExampleFormComponent,
     HomeComponent,
+    DropStyleDirective,
     HomeworkComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ProjectComponent,
-    ReactiveFormsModule,
     CoinsComponent,
+    ReactiveFormsModule,
     FormsModule,
     ServersModule,
     TodosModule,

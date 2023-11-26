@@ -1,1 +1,12 @@
-<button class="btn btn-primary d-flex justify-content-center m-auto" (click)="getMyCoins()">get news !</button>
+<button  class="btn btn-primary d-flex justify-content-center m-auto" (click)="getMyCoins($event)">get news !</button>
+<ul appDropdown class="close">
+    <li>
+        <a href="https://www.bbc.com/news">BBC News</a>
+    </li>
+    <li>
+        <a href="https://ir.voanews.com/">VOA News</a>
+    </li>
+    <li>
+        <a href="https://www.foxnews.com/">FOX News</a>
+    </li>
+</ul>

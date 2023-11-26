@@ -1,6 +1,6 @@
 <app-homework (count)="updateCount($event)"></app-homework>
 <h1 *ngIf="isShowNumber"  class="d-flex justify-content-center m-auto mb-3">{{myNumber}}</h1>
-<p class="d-flex justify-content-center" [ngClass]="{ backgroundActive : isShowNumber }">home works!</p>
+<p class="d-flex justify-content-center" [ngClass]="{ backgroundActive : isShowNumber }" appDropStyle>home works!</p>
 <p class="d-flex justify-content-center">{{ nameOfDeveloper$  }}</p>
 <div class="d-flex justify-content-center m-auto mt-2 mb-4">
     <button class="btn btn-primary" (click)="concatName()">concatName</button>
@@ -11,7 +11,7 @@
 </div>
 <div class="mt-5 user-box row col-12">
     <div *ngIf="!isUpload">
-        <span class="alert alert-danger d-flex justify-content-center" >No User !</span>
+        <span #localElem class="alert alert-danger d-flex justify-content-center" >No User !</span>
     </div>
     <div *ngIf="isUpload" style="width: 22rem;" class="user-container">
         <img [src]="imageSrc" style="width: 20rem;" alt="" srcset="">
